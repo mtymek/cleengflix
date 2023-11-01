@@ -1,8 +1,25 @@
-import Auth from '@cleeng/mediastore-sdk';
+import { Auth } from '@cleeng/mediastore-sdk';
+import getCustomer from '@cleeng/mediastore-sdk/dist/api/Customer/getCustomer';
+import {useState} from "react";
 
-function HeaderAuthenticated() {
+function HeaderAuthenticated(props) {
+    function logout() {
+        Auth.logout();
+        props.onLogout();
+    }
+
+    let [userName, setUserName] = useState("Loading...");
+
+    getCustomer().then((customer) => {
+        setUserName(customer.responseData.email);
+
+    });
+
     return (
-        <a href="#" className="text-gray-400 hover:text-white" onClick={Auth.logout()}>Sign Out</a>
+        <div className="flex items-center">
+            <span className="text-gray-400 mr-4">Welcome, {userName}</span>
+            <a href="#" className="text-gray-400 hover:text-white" onClick={logout}>Sign Out</a>
+        </div>
     )
 }
 

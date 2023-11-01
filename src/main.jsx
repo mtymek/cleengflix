@@ -9,8 +9,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { Config } from "@cleeng/mediastore-sdk";
 
 Config.setEnvironment("sandbox");
-Config.setPublisher("123456789");
-Config.setOffer("S123456789_US");
+Config.setPublisher(import.meta.env.VITE_CLEENG_PUBLISHER_ID);
+Config.setOffer(import.meta.env.VITE_CLEENG_OFFER_ID);
 Config.setVisibleAdyenPaymentMethods(["card", "applepay"]);
 Config.setHidePayPal();
 
