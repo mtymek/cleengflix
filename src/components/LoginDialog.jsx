@@ -13,6 +13,7 @@ function LoginDialog(props) {
                 <Provider store={store}>
                     { subscreen === 'register'
                         ? <Register
+                            offerId={import.meta.env.VITE_CLEENG_OFFER_ID}
                             onHaveAccountClick={() => setSubscreen('login')}
                             onSuccess={props.onSuccess}
                         />

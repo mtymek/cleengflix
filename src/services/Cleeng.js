@@ -1,12 +1,12 @@
 import { Config } from "@cleeng/mediastore-sdk";
-import getCustomerOffers from '@cleeng/mediastore-sdk/dist/api/Customer/getCustomerOffers';
+import getCustomerSubscriptions from '@cleeng/mediastore-sdk/dist/api/Customer/getCustomerSubscriptions';
 
 const Cleeng = {
     offerId: Config.offerId,
 
-    isEntitled: function() {
-        getCustomerOffers().then((res) => {
-            console.log(res);
+    isEntitled: async function() {
+        return await getCustomerSubscriptions().then((res) => {
+            // return
         });
     }
 };

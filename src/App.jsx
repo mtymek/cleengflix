@@ -1,8 +1,12 @@
 import './App.css'
 import MovieList from './components/MovieList';
 import Header from "./components/Header.jsx";
+import Cleeng from "./services/Cleeng";
 
 function App() {
+
+    Cleeng.isEntitled();
+
     return (
         <div className="flex flex-col h-screen justify-between">
             <Header/>
