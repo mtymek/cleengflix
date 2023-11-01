@@ -12,10 +12,10 @@ Built with Cleeng MediaStore SDK.
 
 - [ ] Video player
 - [ ] My Account
-- [ ] Entitlements
+- [x] Entitlements
 
 **Technical**
-- [ ] Wrap the overlay into dedicated component
+- [x] Wrap the overlay into dedicated component
 
 ### Nice to have / experiments
 - [ ] Search
