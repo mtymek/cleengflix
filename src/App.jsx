@@ -1,10 +1,8 @@
 import './App.css'
 import MovieList from './components/MovieList';
 import Header from "./components/Header.jsx";
-import {useState} from "react";
 
 function App() {
-
     return (
         <div className="flex flex-col h-screen justify-between">
             <Header/>

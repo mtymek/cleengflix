@@ -16,10 +16,10 @@ function HeaderAuthenticated(props) {
     });
 
     return (
-        <div className="flex items-center">
+        <>
             <span className="text-gray-400 mr-4">Welcome, {userName}</span>
             <a href="#" className="text-gray-400 hover:text-white" onClick={logout}>Sign Out</a>
-        </div>
+        </>
     )
 }
 
