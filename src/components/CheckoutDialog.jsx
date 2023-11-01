@@ -2,17 +2,20 @@
 import { Provider } from 'react-redux';
 import { Checkout, Config, store } from '@cleeng/mediastore-sdk';
 
-function LoginOverlay() {
+function CheckoutDialog() {
 
     return (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-50">
-            <div className="w-1/2">
+        <dialog id="checkout_dialog" className="modal">
+            <div className="modal-box">
                 <Provider store={store}>
                     <Checkout offerId={import.meta.env.VITE_CLEENG_OFFER_ID} />
                 </Provider>
             </div>
-        </div>
+            <form method="dialog" className="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
     );
 }
 
-export default LoginOverlay;
+export default CheckoutDialog;

@@ -12,6 +12,7 @@ Built with Cleeng MediaStore SDK.
 
 - [ ] Video player
 - [ ] My Account
+- [ ] Entitlements
 
 **Technical**
 - [ ] Wrap the overlay into dedicated component

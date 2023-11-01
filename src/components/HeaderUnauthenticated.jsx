@@ -1,24 +1,32 @@
-import {useState} from "react";
-import LoginOverlay from "./LoginOverlay.jsx";
+import LoginDialog from "./LoginDialog.jsx";
 
 function HeaderUnauthenticated(props) {
-
-    const [showLoginOverlay, setShowLoginOverlay] = useState(false);
+    props = {
+        ...{
+            onLogin: () => {}
+        },
+        ...props
+    };
 
     function login() {
-        setShowLoginOverlay(false)
         props.onLogin();
+        closeLoginDialog();
+    }
+
+    function showLoginDialog() {
+        document.getElementById('login_dialog').showModal();
+    }
+    function closeLoginDialog() {
+        document.getElementById('login_dialog').click();
     }
 
     return (
         <>
-            <a href="#" className="text-gray-400 hover:text-white" onClick={() => setShowLoginOverlay(true)}>Sign In</a>
-            {showLoginOverlay && (
-                <LoginOverlay
-                    onClose={() => setShowLoginOverlay(false)}
-                    onSuccess={login}
-                />
-            )}
+            <a href="#" className="text-gray-400 hover:text-white" onClick={showLoginDialog}>Sign In</a>
+            <LoginDialog
+                onClose={closeLoginDialog}
+                onSuccess={login}
+            />
         </>
     )
 }
