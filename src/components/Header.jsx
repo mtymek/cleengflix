@@ -14,7 +14,7 @@ function Header() {
                 {
                     authenticated ?
                         <HeaderAuthenticated onLogout={() => setAuthenticated(false)} />
-                        : <HeaderUnauthenticated />
+                        : <HeaderUnauthenticated onLogin={() => setAuthenticated(true)} />
                 }
             </div>
 

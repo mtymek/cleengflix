@@ -8,7 +8,7 @@ function HeaderAuthenticated(props) {
         props.onLogout();
     }
 
-    let [userName, setUserName] = useState("Loading...");
+    let [userName, setUserName] = useState("...");
 
     getCustomer().then((customer) => {
         setUserName(customer.responseData.email);
