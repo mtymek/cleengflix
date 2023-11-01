@@ -6,7 +6,8 @@ const Cleeng = {
 
     isEntitled: async function() {
         return await getCustomerSubscriptions().then((res) => {
-            // return
+            const entitlements = res.responseData.items;
+            return entitlements.length > 0;
         });
     }
 };
