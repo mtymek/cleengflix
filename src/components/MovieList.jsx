@@ -5,7 +5,7 @@ function MovieList() {
 
     useEffect(() => {
         // Fetch movie data from the JSON file
-        fetch(import.meta.env.BASE_URL + '/movies-250.json')
+        fetch(import.meta.env.BASE_URL + 'movies-250.json')
             .then((response) => response.json())
             .then((data) => setMovies(data.movies))
             .catch((error) => console.error('Error fetching movie data:', error));

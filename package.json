@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@cleeng/mediastore-sdk": "^5.4.1",
+    "@fontsource/pacifico": "^5.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.0"

@@ -29,7 +29,10 @@ function Header() {
     return (
         <header className="bg-black p-4">
             <div className="container mx-auto flex justify-between items-center">
-                <h1 className="text-2xl font-semibold">Cleengflix</h1>
+                <div className="flex">
+                    <img src={import.meta.env.BASE_URL + 'cleengflix.svg'} className="h-8 mr-1" alt="Cleengflix" />
+                    <h1 className="text-2xl font-['Pacifico']">Cleengflix</h1>
+                </div>
                 <div className="flex items-center">
                     <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-4"
                             onClick={showCheckout}>

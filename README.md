@@ -36,11 +36,11 @@ Built with:
 
 - [ ] Video player
 - [ ] My Account
-- [x] Entitlements
+- [x] Simple Entitlements (checking if customer has any active subscription)
 
 **Technical**
 - [x] Wrap the overlay into dedicated component
 
 ### Nice to have / experiments
 - [ ] Search
-- [ ] Auto deploy to GH pages
+- [x] Auto deploy to GH pages
