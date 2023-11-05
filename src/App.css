@@ -4,3 +4,15 @@ body {
     background: url('/background.jpg') scroll;
     background-size: cover;
 }
+
+header h1 {
+    animation: color-change 20s infinite;
+}
+
+@keyframes color-change {
+    0% { color: white; }
+    25% { color: #93edbb; }
+    50% { color: #9861d8; }
+    75% { color: #5ebefa; }
+    100% { color: white; }
+}

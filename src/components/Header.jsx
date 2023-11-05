@@ -30,7 +30,7 @@ function Header() {
         <header className="bg-black p-4">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex">
-                    <img src={import.meta.env.BASE_URL + 'cleengflix.svg'} className="h-8 mr-1" alt="Cleengflix" />
+                    <img src={import.meta.env.BASE_URL + 'cleengflix.svg'} className="h-8 mr-2" alt="Cleengflix" />
                     <h1 className="text-2xl font-['Pacifico']">Cleengflix</h1>
                 </div>
                 <div className="flex items-center">
