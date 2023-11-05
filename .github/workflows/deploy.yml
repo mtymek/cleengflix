@@ -23,7 +23,7 @@ jobs:
       - name: Build
         # GitHub Page will be published to https://<username>.github.io/<repository>/
         # We need to pass repository name to Vite
-        run: npx vite build --base `basename ${{ github.repository }}`
+        run: npx vite build --base `basename ${{ github.repository }}`/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2

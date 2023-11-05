@@ -4,10 +4,10 @@ Example video catalog that replicated Netflix like experience.
 Built with Cleeng MediaStore SDK.
 
 Built with:
-* [MediaStore SDK](https://github.com/Cleeng/mediastore-sdk)
-* [React](https://reactjs.org/)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [DaisyUI](https://daisyui.com/)
+* [MediaStore SDK](https://github.com/Cleeng/mediastore-sdk) - provides the experience for Checkout and My Account  
+* [React](https://reactjs.org/) - UI library
+* [Tailwind CSS](https://tailwindcss.com/) - for easy styling
+* [DaisyUI](https://daisyui.com/) - provides utitiy classes for Tailwind CSS (e.g. for modal windows)
 
 ## Getting started
 
@@ -37,6 +37,11 @@ Built with:
 - [ ] Video player
 - [ ] My Account
 - [x] Simple Entitlements (checking if customer has any active subscription)
+
+**Look & feel**
+- [x] Dedicated logo
+- [ ] Update colors to dedicated theme
+- [ ] Customize MS SDK to match
 
 **Technical**
 - [x] Wrap the overlay into dedicated component
