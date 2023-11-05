@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm run build --base /cleengflix
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
