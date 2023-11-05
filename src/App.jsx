@@ -8,7 +8,7 @@ function App() {
     Cleeng.isEntitled();
 
     return (
-        <div className="flex flex-col h-screen justify-between">
+        <div className="flex flex-col justify-between">
             <Header/>
 
             <main className="container mx-auto mt-12">

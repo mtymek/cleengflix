@@ -13,8 +13,7 @@ Built with:
 
 ### Prerequisites
 
-* node 20+ + npm
-* Tailwind CSS IntelliSense plugin for VSCode
+* node 20+ + npm 
 
 ### Installation
 
@@ -24,7 +23,7 @@ Built with:
     npm install
     ```
 * Start dev server
-    ```bash
+    ```bash 
     npm run start
     ```
 
