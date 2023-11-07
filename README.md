@@ -13,7 +13,7 @@ Built with:
 
 ### Prerequisites
 
-* node 20+ + npm 
+* node 20+, npm 
 
 ### Installation
 
@@ -24,7 +24,7 @@ Built with:
     ```
 * Start dev server
     ```bash 
-    npm run start
+    npm run dev
     ```
 
 ## Todos
