@@ -15,6 +15,9 @@ Config.setOffer(import.meta.env.VITE_CLEENG_OFFER_ID);
 Config.setVisibleAdyenPaymentMethods(["card", "applepay"]);
 Config.setHidePayPal();
 
+// console.log(import.meta.env.VITE_CLEENG_OFFER_ID);
+// console.log(1);
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />

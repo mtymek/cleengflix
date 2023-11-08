@@ -1,29 +1,24 @@
 import LoginDialog from "./LoginDialog.jsx";
+import {useState} from "react";
 
-function HeaderUnauthenticated(props) {
-    props = {
-        ...{
-            onLogin: () => {}
-        },
-        ...props
-    };
+function HeaderUnauthenticated({onLogin}) {
+
+    let [showLoginDialog, setShowLoginDialog] = useState(false);
 
     function login() {
-        props.onLogin();
+        onLogin();
         closeLoginDialog();
     }
 
-    function showLoginDialog() {
-        document.getElementById('login_dialog').showModal();
-    }
     function closeLoginDialog() {
-        document.getElementById('login_dialog').click();
+        setShowLoginDialog(false);
     }
 
     return (
         <>
-            <a href="#" className="text-gray-400 hover:text-white" onClick={showLoginDialog}>Sign In</a>
+            <a href="#" className="text-gray-400 hover:text-white" onClick={() => setShowLoginDialog(true)}>Sign In</a>
             <LoginDialog
+                open={showLoginDialog}
                 onClose={closeLoginDialog}
                 onSuccess={login}
             />

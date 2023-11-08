@@ -2,10 +2,10 @@ import { Auth } from '@cleeng/mediastore-sdk';
 import getCustomer from '@cleeng/mediastore-sdk/dist/api/Customer/getCustomer';
 import {useState} from "react";
 
-function HeaderAuthenticated(props) {
+function HeaderAuthenticated({onLogout}) {
     function logout() {
         Auth.logout();
-        props.onLogout();
+        onLogout();
     }
 
     let [userName, setUserName] = useState("...");

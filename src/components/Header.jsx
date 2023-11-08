@@ -8,6 +8,7 @@ import Cleeng from "../services/Cleeng";
 function Header() {
     let [authenticated, setAuthenticated] = useState(Auth.isLogged());
     let [isMember, setIsMember] = useState(false);
+    let [showCheckoutDialog, setShowCheckoutDialog] = useState(false);
 
     function updateMemberStatus() {
         Cleeng.isEntitled().then((entitled) => {
@@ -18,10 +19,6 @@ function Header() {
     function onLogin() {
         setAuthenticated(true);
         updateMemberStatus();
-    }
-
-    function showCheckout() {
-        document.getElementById('checkout_dialog').showModal();
     }
 
     updateMemberStatus();
@@ -35,7 +32,7 @@ function Header() {
                 </div>
                 <div className="flex items-center">
                     <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-4"
-                            onClick={showCheckout}>
+                            onClick={() => setShowCheckoutDialog(true)}>
                         { isMember ? "Manage your membership" : "Subscribe" }
                     </button>
 
@@ -47,7 +44,7 @@ function Header() {
                 </div>
             </div>
 
-            <CheckoutDialog />
+            <CheckoutDialog open={showCheckoutDialog} onClose={() => setShowCheckoutDialog(false)} />
 
         </header>
     )

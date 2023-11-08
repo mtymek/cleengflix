@@ -22,6 +22,11 @@ Built with:
     ```bash
     npm install
     ```
+* Copy `.env.local.dist` as `.env.local` and fill in the values inside.
+  Use Publisher ID and Offer ID from Cleeng Sandbox environment.
+    ```bash
+    cp .env.local.dist .env.local
+    ``
 * Start dev server
     ```bash 
     npm run dev

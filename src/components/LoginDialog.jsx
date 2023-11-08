@@ -2,32 +2,28 @@
 import { Provider } from 'react-redux';
 import {Login, Register, store} from '@cleeng/mediastore-sdk';
 import {useState} from "react";
+import Modal from "./utils/Modal.jsx";
 
-function LoginDialog(props) {
+function LoginDialog({open, onClose, onSuccess}) {
 
     let [subscreen, setSubscreen] = useState("login");
 
     return (
-        <dialog id="login_dialog" className="modal">
-            <div className="modal-box">
-                <Provider store={store}>
-                    { subscreen === 'register'
-                        ? <Register
-                            offerId={import.meta.env.VITE_CLEENG_OFFER_ID}
-                            onHaveAccountClick={() => setSubscreen('login')}
-                            onSuccess={props.onSuccess}
-                        />
-                        : <Login
-                            onRegisterClick={() => setSubscreen('register')}
-                            onSuccess={props.onSuccess}
-                        />
-                    }
-                </Provider>
-            </div>
-            <form method="dialog" className="modal-backdrop">
-                <button>close</button>
-            </form>
-        </dialog>
+        <Modal open={open} onClose={onClose}>
+            <Provider store={store}>
+                { subscreen === 'register'
+                    ? <Register
+                        offerId={import.meta.env.VITE_CLEENG_OFFER_ID}
+                        onHaveAccountClick={() => setSubscreen('login')}
+                        onSuccess={onSuccess}
+                    />
+                    : <Login
+                        onRegisterClick={() => setSubscreen('register')}
+                        onSuccess={onSuccess}
+                    />
+                }
+            </Provider>
+        </Modal>
     );
 }
 
