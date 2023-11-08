@@ -26,7 +26,7 @@ Built with:
   Use Publisher ID and Offer ID from Cleeng Sandbox environment.
     ```bash
     cp .env.local.dist .env.local
-    ``
+    ```
 * Start dev server
     ```bash 
     npm run dev
@@ -38,9 +38,10 @@ Built with:
 
 **Features**
 
-- [ ] Video player
+- [ ] Video player mock
 - [ ] My Account
 - [x] Simple Entitlements (checking if customer has any active subscription)
+- [ ] Proper entitlement check logic - allow access if customer has any non-terminated subscriptions
 
 **Look & feel**
 - [x] Dedicated logo
@@ -49,6 +50,7 @@ Built with:
 
 **Technical**
 - [x] Wrap the overlay into dedicated component
+- [x] React component for HTML dialogs
 
 ### Nice to have / experiments
 - [ ] Search
