@@ -10,18 +10,24 @@ function Header() {
     let [isMember, setIsMember] = useState(false);
     let [showCheckoutDialog, setShowCheckoutDialog] = useState(false);
 
-    function updateMemberStatus() {
+    if (Auth.isLogged()) {
         Cleeng.isEntitled().then((entitled) => {
             setIsMember(entitled);
         });
     }
 
-    function onLogin() {
-        setAuthenticated(true);
-        updateMemberStatus();
+    function updateMemberStatus() {
+        setShowCheckoutDialog(false);
+        setAuthenticated(Auth.isLogged());
+        Cleeng.isEntitled().then((entitled) => {
+            setIsMember(entitled);
+        });
     }
 
-    updateMemberStatus();
+    function logOut() {
+        setAuthenticated(false);
+        setIsMember(false)
+    }
 
     return (
         <header className="bg-black p-4">
@@ -38,13 +44,13 @@ function Header() {
 
                     {
                         authenticated ?
-                            <HeaderAuthenticated onLogout={() => setAuthenticated(false)} />
-                            : <HeaderUnauthenticated onLogin={onLogin} />
+                            <HeaderAuthenticated onLogout={logOut} />
+                            : <HeaderUnauthenticated onLogin={updateMemberStatus} />
                     }
                 </div>
             </div>
 
-            <CheckoutDialog open={showCheckoutDialog} onClose={() => setShowCheckoutDialog(false)} />
+            <CheckoutDialog open={showCheckoutDialog} onClose={updateMemberStatus} />
 
         </header>
     )
