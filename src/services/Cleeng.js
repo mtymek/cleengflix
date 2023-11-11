@@ -15,8 +15,17 @@ const Cleeng = {
             if (!Auth.isLogged()) {
                 return false;
             }
-            const entitlements = res.responseData.items;
-            return entitlements.length > 0;
+
+            if (!res.responseData || !res.responseData.items) {
+                return false;
+            }
+
+            const currentTime = Math.floor(Date.now() / 1000);
+
+            // Simplest entitlement check: customer is entitled if they have
+            // any non-terminated subscription
+            return res.responseData.items.map((subscription) => subscription.expiresAt > currentTime)
+                .includes(true);
         });
     }
 };
