@@ -1,10 +1,11 @@
-import { Config, Auth } from "@cleeng/mediastore-sdk";
+import { Auth } from "@cleeng/mediastore-sdk";
 import getCustomerSubscriptions from '@cleeng/mediastore-sdk/dist/api/Customer/getCustomerSubscriptions';
 
 window.Auth = Auth;
 
 const Cleeng = {
-    offerId: Config.offerId,
+    offerId: import.meta.env.VITE_CLEENG_OFFER_ID,
+    publisherId: import.meta.env.VITE_CLEENG_PUBLISHER_ID,
 
     isEntitled: async function() {
         if (!Auth.isLogged()) {

@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import {Login, Register, store} from '@cleeng/mediastore-sdk';
 import {useState} from "react";
 import Modal from "./utils/Modal.jsx";
+import Cleeng from "../services/Cleeng.js";
 
 function LoginDialog({open, onClose, onSuccess}) {
 
@@ -13,7 +14,7 @@ function LoginDialog({open, onClose, onSuccess}) {
             <Provider store={store}>
                 { subscreen === 'register'
                     ? <Register
-                        offerId={import.meta.env.VITE_CLEENG_OFFER_ID}
+                        offerId={Cleeng.offerId}
                         onHaveAccountClick={() => setSubscreen('login')}
                         onSuccess={onSuccess}
                     />
