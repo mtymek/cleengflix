@@ -16,3 +16,11 @@ header h1 {
     75% { color: #5ebefa; }
     100% { color: white; }
 }
+
+.msd__checkout-card-price__wrapper .msd__checkout-card-price__badge {
+    background-color: transparent;
+}
+
+.msd__header .msd__header__logo {
+    background-image: url('/cleengflix.svg');
+}
